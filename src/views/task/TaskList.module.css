@@ -1,0 +1,11 @@
+.root {
+  height: 100vh;
+}
+.tasklist_icon {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 10px;
+  color: dimgray;
+}
