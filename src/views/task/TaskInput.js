@@ -48,6 +48,7 @@ const TaskInput = () => {
       >
         <TextField
           className={classes.field}
+          autoFocus
           value={title}
           onChange={(e) => {
             if (e.key !== "Enter") {

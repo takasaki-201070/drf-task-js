@@ -40,7 +40,13 @@ const TaskForm = () => {
 
   // 更新ボタンクリック
   const updateTask = async (task) => {
-    const result = await dispatch(fetchAsyncUpdate(task));
+    const result = await dispatch(
+      fetchAsyncUpdate({
+        id: task.id,
+        title: task.title,
+        finish_flg: task.finish_flg,
+      })
+    );
     // 更新が異常終了した場合
     if (fetchAsyncUpdate.rejected.match(result)) {
       await dispatch(editLogupt(false));
@@ -75,7 +81,13 @@ const TaskForm = () => {
                 name="title"
                 value={editedTask.title}
                 onChange={(e) => {
-                  dispatch(editTask({ ...editedTask, title: e.target.value }));
+                  dispatch(
+                    editTask({
+                      ...editedTask,
+                      title: e.target.value,
+                      editFlg: true,
+                    })
+                  );
                 }}
               />
               <br />

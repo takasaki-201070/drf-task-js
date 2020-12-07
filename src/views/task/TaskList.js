@@ -125,7 +125,7 @@ const TaskList = () => {
                     align="left"
                     key={`${rowIndex}+1`}
                     onClick={() => {
-                      dispatch(editTask(task));
+                      dispatch(editTask({ ...task, editFlg: false }));
                     }}
                   >
                     {task.title}

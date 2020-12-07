@@ -81,6 +81,7 @@ const taskSlice = createSlice({
       finish_flg: false,
       created_at: "",
       updated_at: "",
+      editFlg: false,
     },
   },
   reducers: {
